@@ -1,0 +1,70 @@
+/*
+  display: grid
+  display: flex
+*/
+
+* {
+  --cor: #fff;
+  --laranja: orange;
+}
+section {
+  width: 30px;
+}
+
+/* 
+
+  medidas no css https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units
+  px
+  pt
+  %
+  vw / vh
+  em
+  rem
+
+  div:nth-of-type(1) UNICO LUGAR NA PROGRAMAÇÃO ONDE O PRIMEIRO ELEMENTO NÃO É INDEXADO COMO 0
+*/
+
+div.laranja {
+  background-color: var(--laranja);
+  height: 24px; /*  todos os designers sempre utilizam múltiplos de 4    */
+  display: inline-block;
+  /* width: min(50vw, 600px); */
+  width: calc(var(--size) * 200px);
+  margin-top: 4px;
+  position: relative;
+}
+
+div.laranja::before {
+  content: attr(data-status);
+  position: absolute;
+  right: -12px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: green;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+  z-index: 2;
+}
+div.laranja::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: red;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
+}
+
+/* 
+  pseudo-classe você vai utilizar apenas quando você quer
+  que algo apareça no DOM e isso só tem um aspecto visual
+  e nada mais
+
+  before
+  after
+  attr(data-status);
+*/

@@ -1,0 +1,104 @@
+section {
+  margin: 0;
+  padding: 0;
+}
+
+section:first-of-type {
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+}
+section:last-of-type {
+  width: 100vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+section > ul {
+  height: 100%;
+  width: 45vw;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  width: 5vw;
+  height: 3vh;
+  border: none;
+  cursor: pointer;
+  border-radius: 24px;
+}
+button:hover {
+  background-color: skyblue;
+  animation: something 2000ms ;
+}
+
+input {
+  width: 30vw;
+  border-radius: 20px;
+  height: 3vh;
+  border: 1px #ccc dashed;
+  padding-left: 1vw;
+}
+
+section > ul > li {
+  display: grid;
+  flex-direction: row;
+  align-items: center;
+  width: 40vw;
+  height: 3vh;
+  grid-template-columns: 1fr repeat(2, 5vw);
+  border: 1px #ccc dashed;
+  border-radius: 20px;
+  padding-left: 4px;
+  position: relative;
+}
+
+section > ul > li::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  z-index: 5;
+  background-color: red;
+}
+
+section > ul > li.done::after {
+  background-color: green;
+
+}
+
+section > ul > li > button:first-of-type {
+  background-color: red;
+}
+section > ul > li > button:last-of-type {
+  background-color: green;
+}
+
+
+@keyframes something {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
